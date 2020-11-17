@@ -2,50 +2,108 @@
 
 - To start a postgresql service
 
-  `sudo service postgresql start`
+  ```sql
+  sudo service postgresql start
+  ```
 
 - To stop the service
 
-  `sudo service postgresql stop`
+  ```sql
+  sudo service postgresql stop
+  ```
 
 - To open psql console
 
-  `sudo -u postgres psql`
+  ```sql
+  sudo -u postgres psql
+  ```
 
 - To see list of tables inside database
 
-  `postgres=# \l`
+  ```sql
+  postgres=# \l
+  ```
 
 - To set password
 
-  `postgres=# \password`
+  ```sql
+  postgres=# \password
+  ```
 
 - To quit psql console
 
-  `postgres=# \q`
+  ```sql
+  postgres=# \q
+  ```
 
 ## Database Create, Connect & Delete
 
 - Create a database
 
-  `postgres=# CREATE DATABASE <databasename>;`
+  ```sql
+  postgres=# CREATE DATABASE <databasename>;
+  ```
 
 - Delete a database
 
-  `postgres=# DROP DATABASE <database name>;`
+  ```sql
+  postgres=# DROP DATABASE <database name>;
+  ```
 
 - Connet to a database
 
-  `psql -h <hostname> -p <port number> -U <username> <database Name>`
+  ```sql
+  psql -h <hostname> -p <port number> -U <username> <database Name>
+  ```
 
   for example: suppose we have a database named test in localhost. so we have to enter
 
-  `psql -h localhost -p 5432 -U postgres test`
+  ```sql
+  psql -h localhost -p 5432 -U postgres test
+  ```
 
   Another way to connect a database using postgres interective terminal (psql) is
 
-  `postgres=# \c <database name>`
+  ```sql
+  postgres=# \c <database name>
+  ```
 
   for example:
 
-  `postgres=# \c test`
+  ```sql
+  postgres=# \c test
+  ```
+
+## Table operations
+
+- Create a table without constrains (here dbname is your database name)
+
+  ```sql
+  dbname=# CREATE TABLE <tablename>(
+    <Column name> <datatype>
+  )
+  ```
+
+  for example, Let's create a person database
+
+  ```sql
+  dbname=# CREATE TABLE person(
+    id INT,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    gender VARCHAR(10),
+    date_of_birth DATE
+  );
+  ```
+
+- To list all the table inside a database (or to describe)
+
+  ```sql
+  dbname=# \d
+  ```
+
+- To describe all the column in a table
+
+  ```sql
+  dbname=# \d <tablename>
+  ```
