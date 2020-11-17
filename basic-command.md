@@ -24,8 +24,28 @@
 
   `postgres=# \q`
 
-## Database basic operation
+## Database Create, Connect & Delete
 
 - Create a database
 
   `postgres=# CREATE DATABASE <databasename>;`
+
+- Delete a database
+
+  `postgres=# DROP DATABASE <database name>;`
+
+- Connet to a database
+
+  `psql -h <hostname> -p <port number> -U <username> <database Name>`
+
+  for example: suppose we have a database named test in localhost. so we have to enter
+
+  `psql -h localhost -p 5432 -U postgres test`
+
+  Another way to connect a database using postgres interective terminal (psql) is
+
+  `postgres=# \c <database name>`
+
+  for example:
+
+  `postgres=# \c test`
