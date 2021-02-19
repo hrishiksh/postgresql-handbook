@@ -44,3 +44,29 @@ we can use logical operators like other programming languages
 
 `To add multiple condittion we can use AND, OR, NOT keywords`
 
+## 5. Order By
+
+To order or sort a result ascending or descending order according to a column
+
+```sql
+SELECT column1,column2 FROM table_name ORDER BY column1 ASC/DESC
+
+-- To sort through multiple column
+
+SELECT column1,column2 FROM table_name ORDER BY column1,column2 ASC/DESC
+
+-- ASC is applied by default
+```
+
+## 6. LIMIT
+
+To limit the number of rows returned by a query, we use limit keyword
+
+```sql
+SELECT column_name FROM table_name
+WHERE some_condition
+ORDER BY column_name
+LIMIT some_interger;
+
+-- here some_integer should equal to the number of rows we require in the result
+```
